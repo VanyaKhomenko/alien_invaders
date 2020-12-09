@@ -33,4 +33,4 @@ class Ship():
 
     def center_ship(self):
         """Размещает корабль в центре нижней стороны."""
-        self.center = self.screen_rect.centerx  
+        self.center = self.screen_rect.centerx
