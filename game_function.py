@@ -38,15 +38,17 @@ def check_events(ai_settings, screen, stats, play_button, ship, aliens, bullets)
 
 def check_play_button(ai_settings, screen, stats, play_button, ship, aliens, bullets, mouse_x, mouse_y):
     """Запускает новую игру при нажатии кнопки Play."""
-    if play_button.rect.collidepoint(mouse_x,mouse_y):
-        stats.reset_stats()
-        stats.game_active = True
-    # Очистка списков пришельцев и пуль.
-    aliens.empty()
-    bullets.empty()
-    # Создание нового флота и размещение корабля в центре.
-    create_fleet(ai_settings, screen, ship, aliens)
-    ship.center_ship()
+    button_clicked = play_button.rect.collidepoint(mouse_x,mouse_y)
+    if button_clicked and not stats.game_active:
+        if play_button.rect.collidepoint(mouse_x,mouse_y):
+            stats.reset_stats()
+            stats.game_active = True
+        # Очистка списков пришельцев и пуль.
+        aliens.empty()
+        bullets.empty()
+        # Создание нового флота и размещение корабля в центре.
+        create_fleet(ai_settings, screen, ship, aliens)
+        ship.center_ship()
 
 
 
