@@ -7,8 +7,6 @@ import game_function as gf
 import pygame
 from pygame.sprite import Group
 
-from pygame.display import set_caption
-
 
 def run_game():
 
@@ -26,7 +24,7 @@ def run_game():
     # alien = Alien(ai_settings, screen)
 
     while True:
-        gf.check_events(ai_settings, screen, stats, play_button, ship, bullets)
+        gf.check_events(ai_settings, screen, stats, play_button, ship, aliens, bullets)
         if stats.game_active:
             ship.update()
             bullets.update()
