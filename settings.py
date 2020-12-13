@@ -17,6 +17,7 @@ class Settings():
         self.fleet_direction = 1
 
         self.speedup_scale = 1.1
+        self.score_scale = 1.5
         self.initialize_dynamic_settings()
 
         self.ship_limit = 3
@@ -25,7 +26,11 @@ class Settings():
         self.ship_speed_factor = 1.5
         self.bullet_speed_factor = 3
         self.alien_speed_factor = 1
-        # fleet_direction = 1 обозначает движение вправо; а -1 - влево.
+
+        # Scoring.
+        self.alien_points = 50
+
+        # fleet_direction of 1 represents right, -1 represents left.
         self.fleet_direction = 1
 
     def increase_speed(self):
